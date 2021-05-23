@@ -1,33 +1,32 @@
-# ダブルクオテーションとシングルクオテーションの挙動の違い
+# <2.4>数値
 
-puts "こんにちは\nさようなら"
-puts 'こんにちは\nさようなら'
+# _は表示されない。大きな数値を区切るのに便利。
+puts 1_000_000_000
 
-name = 'Alice'
-puts "Hello, #{name}!"
-name = 'Alice'
-puts 'Hello, #{name}!'
+n = 1
+puts -n
 
-i = 10
-puts "#{i}は１６進数にすると#{i.to_s(16)}です"
-i = 10
-puts '#{i}は１６進数にすると#{i.to_s(16)}です'
+# 整数同士の割り算は整数になり、小数点以下は切り捨て
+puts 1 / 2
+puts 1.0 / 2
 
+# 変数に整数が入っている場合、to_f(f=float)メソッドを用いて整数→小数へ変更できる
+n = 1
+puts n.to_f
+puts n.to_f / 2
 
-# ダブルクオートの中にシングルクオートを、シングルクオートの中にダブルクオートを使いたい場合、
-# 該当箇所の前にバックスラッシュを入れる。バックスラッシュには効果を打ち消す作用あり。
-puts 'He said, "Don\'t speak."'
-puts "He said, \"Don't speak.\""
+# %は割り算の余りを求める
+puts 8 % 3
 
-name = 'Alice'
-puts "Hello, \#{name}!"
+# **はべき乗（n=正の整数であればaのn乗 参照：https://atarimae.biz/archives/20521）
+puts 2 ** 3
 
+# 比較
+puts 2 <= 4
+puts 5 >= 4
+puts 0 != 0
+puts 1 == 1
 
-# 文字コードが大小比較の基準になる
-puts 'a' < 'b'
-puts 'A' < 'a'
-puts 'abc' < 'def'
-puts 'abcd' < 'abc'
-puts 3 + 5 == 4 + 4
-puts 3 + 5 != 4 + 5
-puts 3 + 5 >= 4 + 5
+# 以下の２つは同じ。いつも通り、掛ける割るが優先された後足す引く
+puts 2 * 3 + 4 * 5 - 6 / 2
+puts (2 * 3) + (4 * 5) - (6 / 2)
