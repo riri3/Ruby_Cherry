@@ -28,9 +28,9 @@ puts greeting('us')
 def greeting(country)
   # countryがnilならメッセージを返してメソッドを抜ける
   return 'countryを入力してください' if country.nil?
-  
+
   # nil?メソッド(~.nil?)ではレシーバーがnilのときtrueを返し、nilではない場合falseを返します。
-  
+
   if country == 'japan'
     puts 'こんにちは'
   else
@@ -38,5 +38,4 @@ def greeting(country)
   end
 end
 
-puts greeting(nil) 
-  
+puts greeting(nil)
