@@ -1,41 +1,50 @@
-# <2.6>メソッド
-# メソッド名はスネークケースで定義！キャメルケースNG。数字から始まるメソッド名NG。
+# <2.8>文字列
+# 文字列は改行できる。
+puts "Line 1,
+Line 2"
 
-# def メソッド（引数１,引数２）
-#   必要な処理
-# end
+a = <<text
+これはヒアドキュメント使用例です。
+複数行にわたる長い文字列を作成する場合、上記のように改行するよりも
+識別子を使った方がすっきり書ける！
+識別子は自由につけられるが、
+記述する文字列の中に含まれない文字列を使う。
+text
 
-def add(a, b)
-  a + b
-end
-puts add(1, 2)
-
-
-
-def greeting(country)
-  if country == 'japan'
-    'こんにちは'
-  else
-    'hello'
-  end
-end
-
-puts greeting('japan')
-puts greeting('us')
+puts a
 
 
-# メソッドを途中で脱出する場合、returnが使われる
-def greeting(country)
-  # countryがnilならメッセージを返してメソッドを抜ける
-  return 'countryを入力してください' if country.nil?
-
-  # nil?メソッド(~.nil?)ではレシーバーがnilのときtrueを返し、nilではない場合falseを返します。
-
-  if country == 'japan'
-    puts 'こんにちは'
-  else
-    puts 'hello'
-  end
+def some_method_1
+  <<-text
+  上記のように<<-とすると、
+  インデント（字下げ）させることができる。
+  text
 end
 
-puts greeting(nil)
+puts some_method_1
+
+
+
+
+
+def some_method_2
+  <<~text
+  上記のように<<~とすると、内部文字列の
+  インデント（字下げ）を無視できる。
+  text
+end
+
+puts some_method_2
+
+
+
+name = 'Alice'
+a = <<text
+ようこそ、#{name}さん！
+以下のメッセージをご覧ください。
+text
+puts a
+
+
+# Hi!を１０回
+puts 'Hi!' * 10
