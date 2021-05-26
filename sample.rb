@@ -1,8 +1,6 @@
 # <2.11>メソッド定義
 # 前半のdef-end内でメソッドを定義して、最後に求めたい値を示す
 
-
-
 def greeting_1(country)
   if country == 'japan'
     puts 'こんにちは'
@@ -55,5 +53,11 @@ min = Time.now.min
 sec = Time.now.sec
 puts "今日は" + year.to_s + "年" + month.to_s + "月" + day.to_s + "日です。"
 puts "今日は、#{year}年#{month}月#{day}日です。"
+
 puts "今は" + hour.to_s + "時" + min.to_s + "分" + sec.to_s + "秒です。"
-puts "今は#{hour}時#{min}分#{sec}秒です。"
+puts "今は、#{hour}時#{min}分#{sec}秒です。"
+
+
+
+require 'date'
+puts Date.today
