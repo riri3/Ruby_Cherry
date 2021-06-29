@@ -1,3 +1,4 @@
+# テストコードの雛形
 require 'minitest/autorun'
 
 # ここからテストの本体（テストクラス）
